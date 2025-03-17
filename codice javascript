@@ -1,0 +1,28 @@
+let heapSize = 0;
+let stackSize = 0;
+
+function allocateMemory() {
+    const heapAllocatedDiv = document.getElementById('heap-allocated');
+    heapSize += 10; // ogni allocazione aumenta la dimensione del heap di 10 unità
+    heapAllocatedDiv.style.height = heapSize + 'px';
+    heapAllocatedDiv.innerHTML = `Memoria allocata: ${heapSize} px`;
+}
+
+function deallocateMemory() {
+    const heapAllocatedDiv = document.getElementById('heap-allocated');
+    if (heapSize > 0) {
+        heapSize -= 10; // ogni deallocazione riduce la dimensione del heap di 10 unità
+        heapAllocatedDiv.style.height = heapSize + 'px';
+        heapAllocatedDiv.innerHTML = `Memoria allocata: ${heapSize} px`;
+    }
+}
+
+function simulateStackGrowth() {
+    const stackDiv = document.getElementById('stack-changes');
+    stackSize += 10; // ogni chiamata simulata aggiunge 10 px allo stack
+    stackDiv.style.height = stackSize + 'px';
+    stackDiv.innerHTML = `Stack size: ${stackSize} px`;
+}
+
+// Simulazione di chiamate a funzione
+setInterval(simulateStackGrowth, 1000); // cresce ogni secondo

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestione della Memoria</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Rappresentazione della Memoria</h1>
+        <div class="legend">
+            <p><span class="text-color">Text Segment</span>: Codice eseguibile</p>
+            <p><span class="data-color">Data Segment</span>: Variabili globali e statiche</p>
+            <p><span class="heap-color">Heap</span>: Memoria allocata dinamicamente</p>
+            <p><span class="stack-color">Stack</span>: Chiamate funzioni e variabili locali</p>
+        </div>
+
+        <div class="memory">
+            <div class="text-segment">Text Segment</div>
+            <div class="data-segment">Data Segment</div>
+            <div class="heap">
+                <p>Heap</p>
+                <div id="heap-allocated"></div>
+                <button onclick="allocateMemory()">Allocare Memoria</button>
+                <button onclick="deallocateMemory()">Deallocare Memoria</button>
+            </div>
+            <div class="stack">
+                <p>Stack</p>
+                <div id="stack-changes"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
